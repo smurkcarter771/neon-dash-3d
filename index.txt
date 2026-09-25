@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Cyber Surfer 3D</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Three.js Library via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- 3D Canvas Viewport -->
+  <div id="game-container"></div>
+
+  <!-- HUD Overlay -->
+  <div id="hud" class="hidden">
+    <div class="hud-box">
+      <div class="hud-label">SCORE</div>
+      <div id="score-val">0</div>
+    </div>
+    <div class="hud-box">
+      <div class="hud-label">COINS</div>
+      <div id="coins-val">🪙 0</div>
+    </div>
+    <div class="hud-box">
+      <div class="hud-label">BEST</div>
+      <div id="high-score-val">0</div>
+    </div>
+  </div>
+
+  <!-- Active Power-up Badges -->
+  <div id="powerup-bar">
+    <div id="badge-magnet" class="powerup-badge hidden">🧲 MAGNET</div>
+    <div id="badge-shield" class="powerup-badge hidden">🛡️ SHIELD</div>
+    <div id="badge-multiplier" class="powerup-badge hidden">⚡ 2x SCORE</div>
+  </div>
+
+  <!-- Start Screen -->
+  <div id="start-screen" class="screen">
+    <div class="title-container">
+      <h1 class="glitch-title">CYBER SURFER</h1>
+      <p class="subtitle">3D ENDLESS RUNNER</p>
+    </div>
+    <div class="instructions-card">
+      <h3>HOW TO PLAY</h3>
+      <p><b>⬅️ / ➡️ or A / D:</b> Switch Lanes</p>
+      <p><b>⬆️ or Spacebar:</b> Jump</p>
+      <p><b>⬇️ or S:</b> Slide / Roll</p>
+      <p>Collect coins, grab power-ups, and avoid obstacles!</p>
+    </div>
+    <button id="start-btn" class="btn">START RUN</button>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div id="gameover-screen" class="screen hidden">
+    <h2 class="danger-title">CRASHED!</h2>
+    <div class="stats-card">
+      <p>Final Score: <span id="final-score">0</span></p>
+      <p>Coins Collected: <span id="final-coins">0</span></p>
+      <p>High Score: <span id="final-highscore">0</span></p>
+    </div>
+    <button id="restart-btn" class="btn">PLAY AGAIN</button>
+  </div>
+
+  <!-- Mobile On-Screen Touch Controls -->
+  <div id="mobile-controls">
+    <button id="btn-left" class="touch-btn">◀</button>
+    <button id="btn-jump" class="touch-btn">▲</button>
+    <button id="btn-slide" class="touch-btn">▼</button>
+    <button id="btn-right" class="touch-btn">▶</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
